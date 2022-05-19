@@ -1,29 +1,30 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>Es la hora: </title>
 <script>
     $(document).ready(main);
-
-var contador = 1;
-
-function main(){
-	$('.menu_bar').click(function(){
-		// $('nav').toggle(); 
-
-		if(contador == 1){
-			$('nav').animate({
-				left: '0'
-			});
-			contador = 0;
-		} else {
-			contador = 1;
-			$('nav').animate({
-				left: '-100%'
-			});
-		}
-
-	});
-
-};
+    
+    var time = new Date();
+    console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+    alert(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+    var contador = 1;
+    function main(){
+        $('.menu_bar').click(function(){
+            // $('nav').toggle(); 
+            if(contador == 1){
+                $('nav').animate({
+                    left: '0'
+                });
+                contador = 0;
+            } else {
+                contador = 1;
+                $('nav').animate({
+                    left: '-100%'
+                });
+            }
+        });
+    };
 </script>
+<script src="jquery-latest.js"></script>
 <link rel="stylesheet" href="./styles/estilos_menu.css">
 	<header>
 		<div class="menu_bar">
